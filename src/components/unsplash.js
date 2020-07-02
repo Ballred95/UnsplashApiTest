@@ -7,7 +7,7 @@ export default function Unsplash(props) {
         .then(res => res.json())
         .then(setData)
         .catch(console.error)
-    }, []) 
+    }) 
     
 
     if(data) {
