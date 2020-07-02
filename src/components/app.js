@@ -19,7 +19,7 @@ export default class App extends Component {
   handleGetData() {
     fetch('https://api.unsplash.com/search/photos/?client_id=HN_kjPdQ-BoIKjcaX0ItpS0T0R4_CJb2C3ZycC6pWQI&query=flower', {method: 'GET'})
     .then(response => response.json())
-    .then(data => this.setState({data: data.results[1].id}))
+    .then(data => this.setState({data: data.results[0].urls.small}))
     .catch(error => console.log(error))
 
     
@@ -32,7 +32,7 @@ export default class App extends Component {
    this.handleGetData()
     return (
       <div className='app'>
-       {this.state.data}
+       <img src={this.state.data} />
       </div>
     );
   }
